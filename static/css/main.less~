@@ -1,0 +1,52 @@
+@gray: rgb(225, 225, 225);
+body {
+    padding:0px;
+    margin:0px;
+}
+#wrapper {
+    text-align:center;
+    min-width:1200px;
+    width:100%;
+    padding:0px;
+    margin:0px;
+}
+
+img.bg {
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1024px;
+
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+	img.bg {
+		left: 50%;
+		margin-left: -512px;   /* 50% */
+	}
+}
+
+/* enterAccessCode */
+#innerContent {
+    position:relative;
+    #enterAccessCode-container {
+		margin-top:15%;
+        position:relative;
+        margin:auto;
+        width: 50%; 
+        min-width: 40%;
+        background-color: @gray;
+        opacity:0.98;
+        
+        form {
+           
+        }
+    }   
+}

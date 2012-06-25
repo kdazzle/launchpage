@@ -1,0 +1,15 @@
+from django.template import Context, loader, RequestContext, Template
+from django.http import HttpResponse
+from django.conf import settings
+
+class DownloadCardsController():
+    def loadPage(request, context, template):
+        t = loader.get_template(template)
+        c = RequestContext(request, {
+            })
+        logger.debug("Media Root: ")# + settings.MEDIA_ROOT)
+        logger.error("Media Root: " + settings.MEDIA_ROOT)
+
+        if context:
+            c.update(context)
+        return HttpResponse(t.render(c))

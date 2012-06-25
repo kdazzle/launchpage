@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    {% load staticfiles %}
+    <link type="text/css" rel="stylesheet/less" href="{% static 'css/bootstrap.css' %}" />
+    <link type="text/css" rel="stylesheet/less" href="{% static 'css/main.less' %}" />
+    <script type="text/javascript" src="{% static 'js/less.js' %}"></script>
+
+</head>
+<body>
+    <img class="bg" src="{% static 'images/lr_VancouverBW.jpg' %}" />
+
+    <div id="wrapper">
+        <div id="pageContent">
+            {% block primary %}
+            {% endblock primary %}
+        </div>
+    </div>
+</body>
+</html>
