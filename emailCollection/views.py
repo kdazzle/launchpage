@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 
 from emailCollection.models import EmailRequest
 from emailCollection.models import EmailRequestForm
-from commonFiles.launchPageController import LaunchPageController
+from commonFiles.launchpageController import LaunchpageController
 
 @csrf_protect
 def displayHomepage(request):
