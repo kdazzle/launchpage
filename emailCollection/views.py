@@ -20,19 +20,28 @@ def displayThankYou(request):
     return view.displayThankYou(request)
 
 class EmailRequestController(LaunchpageController):
+    errorMessage = None
+
     def enterHomeView(self, request):
         if request.method=='POST':
             form = EmailRequestForm(request.POST)
-            if form.is_valid():
-                emailRequest = form.save()
-                return redirect('thankYou')
+
+            try:
+                if form.is_valid():
+                    emailRequest = form.save()
+                    return redirect('thankYou')
+            except:
+                self.errorMessage = """We're very sorry, but there has been an error
+                    processing the form. Please try again."""
+
         else:
             form = EmailRequestForm()
 
         t = 'emailCollection/home.html'
         c = RequestContext(request, {
                      'form': form,
-                     'action': ""
+                     'action': "",
+                     'errorMessage': self.errorMessage,
                      })
         return self.loadPage(request, c, t)
 

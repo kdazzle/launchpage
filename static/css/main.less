@@ -10,6 +10,7 @@ li {
 
 h3 {
     padding:15px;
+    text-align:center;
 }
 
 #wrapper {
@@ -46,7 +47,15 @@ img.bg {
 #innerContent {
     position:relative;
 
-    #launchpage-container {
+    #launchpage-container,
+    #launchpage-thankYou-container {
+
+        .errorMessageDisplay {
+            text-align:center;
+            margin:auto;
+        }
+
+        text-align:left;
         position:relative;
         margin:auto;
         margin-top:15%;
@@ -55,10 +64,6 @@ img.bg {
         background-color: @gray;
         opacity:0.98;
         padding:30px;
-
-        p {
-            text-align:left;
-        }
 
         #launchpageSolicitation {
             margin-top:30px;
@@ -90,5 +95,13 @@ img.bg {
                 }
             }
         }
+    }
+
+    #launchpage-thankYou-container {
+        text-align:center;
+    }
+
+    .launchpage-form-error {
+        text-align:center;
     }
 }

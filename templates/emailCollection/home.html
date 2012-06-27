@@ -3,6 +3,12 @@
 {% block primary %}
 <div id="innerContent">
     <div id="launchpage-container">
+        {% if errorMessage %}
+            <div class="errorMessageDisplay alert alert-error">
+                <p>{{ errorMessage }}</p>
+            </div>
+        {% endif %}
+
         <div id="launchpageInfo">
             <h3>Welcome!</h3>
             
@@ -27,7 +33,9 @@
             <div id="launchpage-form-fields">
                 {% for field in form.visible_fields %}
                     <div class="launchpage-form-fieldContainer">
-                        <div class="launchpage-form-error">{{ field.errors }}</div>
+                        {% if field.errors %}
+                            <div class="launchpage-form-error alert alert-error">{{ field.errors }}</div>
+                        {% endif %}
                         <div class="launchpage-form-fieldRow">
                             <div class="launchpage-form-label">{{ field.label_tag }}</div>
                             <div class="launchpage-form-input">{{ field }}</div>
