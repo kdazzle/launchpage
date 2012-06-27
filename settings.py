@@ -1,5 +1,5 @@
 # Django settings for launchpage project.
-import os
+import os, posixpath
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -54,7 +54,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media/')
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media/')
 
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
@@ -66,7 +66,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static/')
+#STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static/')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -82,7 +82,10 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_DIR, 'static/'),
+#    os.path.join(os.path.dirname(__file__), 'static', 'images/'),
+#    os.path.join(os.path.dirname(__file__), 'static', 'js/'),
+#    os.path.join(os.path.dirname(__file__), 'static', 'css/'),
+    posixpath.join(posixpath.dirname(__file__), 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -94,7 +97,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'S4CPIJoxmkWO8XWb2zc2AkynndIZllq7'
+SECRET_KEY = 'S4CPIJoxmkWO8XWb2zc2qweAkynndIZllq7'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -112,7 +115,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'launchpage.urls'
 
 # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
 # Always use forward slashes, even on Windows.
