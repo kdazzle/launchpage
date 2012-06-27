@@ -3,6 +3,15 @@ body {
     padding:0px;
     margin:0px;
 }
+
+li {
+    list-style-type:none;
+}
+
+h3 {
+    padding:15px;
+}
+
 #wrapper {
     text-align:center;
     min-width:1200px;
@@ -37,10 +46,7 @@ img.bg {
 #innerContent {
     position:relative;
 
-    #downloadCards-musicStorage-container,
-    #enterAccessCode-container,
-    #musicStorage-addArtist-container,
-    #musicStorage-artistDetail-container {
+    #launchpage-container {
         position:relative;
         margin:auto;
         margin-top:15%;
@@ -48,23 +54,39 @@ img.bg {
         min-width: 40%;
         background-color: @gray;
         opacity:0.98;
-        
-        form {
-           
+        padding:30px;
+
+        p {
+            text-align:left;
         }
-    }
-}
 
-/* Artist List */
-#innerContent {
-    #downloadCards-musicStorage-container {
-        #detailListing {
-            table {
-                margin: auto;
-                width: 100%;
+        #launchpageSolicitation {
+            margin-top:30px;
+            margin-bottom:30px;
 
-                .downloadCards-musicStorage-artistList-table-artist-row {
+            p {
+                text-align:center;
+                font-style:italic;
+            }
+        }
 
+        form {
+            .launchpage-form-fieldContainer {
+                .launchpage-form-fieldRow {
+                    overflow:hidden;
+                    margin-left:20%;
+                    margin-top:15px;
+
+                    .launchpage-form-label,
+                    .launchpage-form-input,
+                    #launchpage-form-submit {
+                        position:relative;
+                        float:left;
+                    }
+
+                    .launchpage-form-label {
+                        padding:5px;
+                    }
                 }
             }
         }

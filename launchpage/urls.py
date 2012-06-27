@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.STATIC_ROOT}),
     url(r'^$', 'emailCollection.views.displayHomepage', name='home'),
+    url(r'^thankYou/$', 'emailCollection.views.displayThankYou', name='thankYou'),
 )

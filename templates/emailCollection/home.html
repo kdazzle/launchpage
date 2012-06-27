@@ -2,7 +2,17 @@
 
 {% block primary %}
 <div id="innerContent">
-    <div id="enterAccessCode-container">
+    <div id="launchpage-container">
+        <div id="launchpageInfo">
+            <h3>Welcome!</h3>
+            
+        </div>
+        <div id="launchpageSolicitation">
+            <p>
+                If you would like us to contact you when this is up and running,
+                just put your email in the box.
+            </p>
+        </div>
         <form action="{{ action }}" method="POST">
             {% csrf_token %}
 
@@ -14,21 +24,22 @@
                 </ul>
             {% endif %}
 
-            <div id="enterAccessCode-form-fields">
+            <div id="launchpage-form-fields">
                 {% for field in form.visible_fields %}
-                    <div class="enterAccessCode-form-fieldContainer">
-                        <div class="enterAccessCode-form-label">{{ field.label_tag }}</div>
-                        <div class="enterAccessCode-form-error">{{ field.errors }}</div>
-                        <div class="enterAccessCode-form-input">{{ field }}</div>
+                    <div class="launchpage-form-fieldContainer">
+                        <div class="launchpage-form-error">{{ field.errors }}</div>
+                        <div class="launchpage-form-fieldRow">
+                            <div class="launchpage-form-label">{{ field.label_tag }}</div>
+                            <div class="launchpage-form-input">{{ field }}</div>
+                            {% if forloop.last %}
+                                <div id="launchpage-form-submit"><input type="submit" value="Submit" /></div>
+                            {% endif %}
+                        </div>
                     </div>
                 {% endfor %}
                 
-                <div id="enterAccessCode-form-submit"><input type="submit" value="Submit" /></div>
             </div>
         </form>
     </div>
-	<div id="enterAccessCode-footer">
-		
-	</div>
 </div>
 {% endblock primary %}
